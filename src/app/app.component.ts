@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { PersonaComponent } from './persona/persona.component'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './persona/persona.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'P1';
+  persona:PersonaComponent = new PersonaComponent()
+  constructor(){
+    this.persona.set_nombre('Gustavo')
+    this.persona.set_edad(19)
+    this.persona.set_apellido('Hernandez')
+    this.persona.set_sexo('Male')
+  }
 }
